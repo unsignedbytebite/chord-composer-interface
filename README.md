@@ -4,7 +4,7 @@ CLI for Chord Composer (Tool for structuring chord progressions and patterns).
 
 The philosophy behind **Chord Composer** is to make a lightweight, portable, and accessible tool to structure chord patterns and progressions for music composition ideas. It must fit into common digital music writing workflows and not hinder the creative process of the user.
 
-**This is a interface for the [Chord Composer]().**
+**This is a interface for the [Chord Composer](https://crates.io/crates/chord-composer).**
 
 ![](http://0x0a141e.co.uk/github/chord-composer/screen00.png)
 
