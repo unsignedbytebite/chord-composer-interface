@@ -12,6 +12,6 @@ pt = []
 zhn = []
 
 [dependencies]
-chord_composer = { git = "https://github.com/unsignedbytebite/chord-composer", branch = "master" }
+chord_composer = { git = "https://github.com/unsignedbytebite/chord-composer", branch = "interface-seperation" }
 clap = "*"
 music-timer = "*"

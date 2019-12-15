@@ -117,7 +117,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 name = "chord-composer-interface"
 version = "0.1.0"
 dependencies = [
- "chord_composer 0.2.6 (git+https://github.com/unsignedbytebite/chord-composer)",
+ "chord_composer 0.2.6 (git+https://github.com/unsignedbytebite/chord-composer?branch=interface-seperation)",
  "clap 2.33.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "music-timer 0.1.5 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
@@ -125,9 +125,8 @@ dependencies = [
 [[package]]
 name = "chord_composer"
 version = "0.2.6"
-source = "git+https://github.com/unsignedbytebite/chord-composer#bbcaf2d6feababfa471bbb9d6d2f2cfb8c2b862a"
+source = "git+https://github.com/unsignedbytebite/chord-composer?branch=interface-seperation#8f2e90801521ac43bc12cd08a6be076bbb031fef"
 dependencies = [
- "clap 2.33.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "ghakuf 0.5.3 (registry+https://github.com/rust-lang/crates.io-index)",
  "music-timer 0.1.5 (registry+https://github.com/rust-lang/crates.io-index)",
  "rand 0.7.2 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -753,7 +752,7 @@ dependencies = [
 "checksum cc 1.0.48 (registry+https://github.com/rust-lang/crates.io-index)" = "f52a465a666ca3d838ebbf08b241383421412fe7ebb463527bba275526d89f76"
 "checksum cexpr 0.3.6 (registry+https://github.com/rust-lang/crates.io-index)" = "fce5b5fb86b0c57c20c834c1b412fd09c77c8a59b9473f86272709e78874cd1d"
 "checksum cfg-if 0.1.10 (registry+https://github.com/rust-lang/crates.io-index)" = "4785bdd1c96b2a846b2bd7cc02e86b6b3dbf14e7e53446c4f54c92a361040822"
-"checksum chord_composer 0.2.6 (git+https://github.com/unsignedbytebite/chord-composer)" = "<none>"
+"checksum chord_composer 0.2.6 (git+https://github.com/unsignedbytebite/chord-composer?branch=interface-seperation)" = "<none>"
 "checksum clang-sys 0.28.1 (registry+https://github.com/rust-lang/crates.io-index)" = "81de550971c976f176130da4b2978d3b524eaa0fd9ac31f3ceb5ae1231fb4853"
 "checksum clap 2.33.0 (registry+https://github.com/rust-lang/crates.io-index)" = "5067f5bb2d80ef5d68b4c87db81601f0b75bca627bc2ef76b141d7b846a3c6d9"
 "checksum claxon 0.4.2 (registry+https://github.com/rust-lang/crates.io-index)" = "f86c952727a495bda7abaf09bafdee1a939194dd793d9a8e26281df55ac43b00"

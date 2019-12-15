@@ -6,4 +6,4 @@ cargo build --release
 
 # Run
 clear
-./target/release/chord_composer chords
+./target/release/chord-composer-interface chords

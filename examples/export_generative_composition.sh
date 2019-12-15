@@ -14,7 +14,7 @@ mkdir ./examples/generative_exports
 #clear
 for i in {0..10}; do
   echo 'Generation:' $i
-  ./target/release/chord_composer export ./examples/example_generative_composition.yaml
+  ./target/release/chord-composer-interface export ./examples/example_generative_composition.yaml
   mv ./examples/example_generative_composition ./examples/generative_exports/
   mv ./examples/generative_exports/example_generative_composition ./examples/generative_exports/generation_$i
   echo ''

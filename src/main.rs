@@ -206,10 +206,27 @@ fn load_and_play(
     ticker_interval,
   };
 
+  // Load audio assets
+  let sample_paths_metronome = vec![
+    "./audio_assets/metronome/tock.ogg".to_string(),
+    "./audio_assets/metronome/tick.ogg".to_string(),
+  ];
+
+  let sample_paths_piano = {
+    let mut sample_paths = Vec::new();
+    for i in 1..61 {
+      let path = format!("audio_assets/piano_instrument/piano ({}).ogg", i);
+      sample_paths.push(path);
+    }
+    sample_paths
+  };
+
   parse_result(&chord_composer::play(
-    file_path,
+    file_path,s
     &mut performance_state,
     play_with_metronome,
+    &sample_paths_metronome,
+    &sample_paths_piano,
   ));
 }
 
