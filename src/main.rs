@@ -222,7 +222,7 @@ fn load_and_play(
   };
 
   parse_result(&chord_composer::play(
-    file_path,s
+    file_path,
     &mut performance_state,
     play_with_metronome,
     &sample_paths_metronome,
