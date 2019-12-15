@@ -230,7 +230,7 @@ fn export_template(file_path: &str) {
 
 fn main() {
   let matches = App::new(strings::STRING_TITLE)
-    .version("0.2.6")
+    .version("0.1.0")
     .author("Cj <unsignedbytebite@gmail.com>")
     .about(strings::STRING_ABOUT)
     .subcommand(
