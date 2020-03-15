@@ -3,7 +3,7 @@ name: middle_c
 # Can be overridden by patterns
 
 chords:
-    - [middle_c, [12]]
+    - [middle_c, [0]]
 
 patterns:
     - name: part_a
