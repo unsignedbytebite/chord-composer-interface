@@ -31,6 +31,11 @@ pub mod strings {
     pub const STRING_HELP_TICKER_BEAT: &str = "Imprime a hora atual em cada alteração de batida.";
     pub const STRING_HELP_TICKER_INTERVAL: &str =
         "Imprime a hora atual em cada alteração do intervalo de batida.";
+
+    pub const STRING_HELP_PLAY_PATTERN: &str = "Reproduzir um padrão.";
+    pub const STRING_HELP_START_BAR: &str = "A barra para iniciar a reprodução.";
+    pub const STRING_WARNING_PATTERN_TAG_NEEDED: &str =
+        "Aviso tag --pattern é necessária para que essa tag funcione.";
 }
 
 #[cfg(feature = "zhn")]
@@ -66,6 +71,10 @@ pub mod strings {
     pub const STRING_HELP_TICKER_BAR: &str = "在每个音乐栏更改上打印当前音乐时间.";
     pub const STRING_HELP_TICKER_BEAT: &str = "在每次音乐节拍变化时打印当前音乐时间.";
     pub const STRING_HELP_TICKER_INTERVAL: &str = "在每个音乐节拍间隔更改时打印当前音乐时间.";
+    pub const STRING_HELP_PLAY_PATTERN: &str = "播放模式.";
+    pub const STRING_HELP_START_BAR: &str = "从播放模式开始播放的栏.";
+    pub const STRING_WARNING_PATTERN_TAG_NEEDED: &str =
+        "警告，--pattern标记是该标记起作用所必需的";
 }
 
 //TODO: Is there a better approach for default features?
@@ -109,6 +118,11 @@ pub mod strings {
     pub const STRING_HELP_TICKER_INTERVAL: &str =
         "Prints the current time on each beat interval change.";
     pub const STRING_HELP: &str = "For more, use --help";
+
+    pub const STRING_HELP_PLAY_PATTERN: &str = "Play a pattern";
+    pub const STRING_HELP_START_BAR: &str = "The bar to start playback from";
+    pub const STRING_WARNING_PATTERN_TAG_NEEDED: &str =
+        "Warning, the --pattern tag is required for this tag to work";
 }
 
 #[test]

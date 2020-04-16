@@ -88,6 +88,8 @@ fn load_and_play(
     ticker_bar: bool,
     ticker_beat: bool,
     ticker_interval: bool,
+    pattern: Option<&str>,
+    start_bar: u16,
 ) {
     /// The composition playback performance state.
     struct State {
@@ -226,13 +228,28 @@ fn load_and_play(
         sample_paths
     };
 
-    parse_result(&chord_composer::play_file(
-        file_path,
-        &mut performance_state,
-        play_with_metronome,
-        &sample_paths_metronome,
-        &sample_paths_piano,
-    ));
+    match pattern {
+        Some(pattern_name) => {
+            parse_result(&chord_composer::play_file_from(
+                file_path,
+                &mut performance_state,
+                play_with_metronome,
+                &sample_paths_metronome,
+                &sample_paths_piano,
+                &MusicTime::new(start_bar, 1, 1),
+                pattern_name,
+            ));
+        }
+        None => {
+            parse_result(&chord_composer::play_file(
+                file_path,
+                &mut performance_state,
+                play_with_metronome,
+                &sample_paths_metronome,
+                &sample_paths_piano,
+            ));
+        }
+    }
 }
 
 /// Print all the supported internal chords.
@@ -252,7 +269,7 @@ fn export_template(file_path: &str) {
 
 fn main() {
     let matches = App::new(strings::STRING_TITLE)
-        .version("0.1.0")
+        .version("0.1.2")
         .author("Cj <unsignedbytebite@gmail.com>")
         .about(strings::STRING_ABOUT)
         .subcommand(
@@ -266,30 +283,38 @@ fn main() {
                 .arg(
                     Arg::with_name("metronome")
                         .long("metronome")
-                        .value_name("metronome")
                         .help(strings::STRING_HELP_METRONOME)
                         .takes_value(false),
                 )
                 .arg(
                     Arg::with_name("ticker-bar")
                         .long("ticker-bar")
-                        .value_name("ticker-bar")
                         .help(strings::STRING_HELP_TICKER_BAR)
                         .takes_value(false),
                 )
                 .arg(
                     Arg::with_name("ticker-beat")
                         .long("ticker-beat")
-                        .value_name("ticker-beat")
                         .help(strings::STRING_HELP_TICKER_BEAT)
                         .takes_value(false),
                 )
                 .arg(
                     Arg::with_name("ticker-interval")
                         .long("ticker-interval")
-                        .value_name("ticker-interval")
                         .help(strings::STRING_HELP_TICKER_INTERVAL)
                         .takes_value(false),
+                )
+                .arg(
+                    Arg::with_name("pattern")
+                        .long("pattern")
+                        .help(strings::STRING_HELP_PLAY_PATTERN)
+                        .takes_value(true),
+                )
+                .arg(
+                    Arg::with_name("start-bar")
+                        .long("start-bar")
+                        .help(strings::STRING_HELP_START_BAR)
+                        .takes_value(true),
                 ),
         )
         .subcommand(
@@ -321,6 +346,22 @@ fn main() {
                 matches.is_present("ticker-bar"),
                 matches.is_present("ticker-beat"),
                 matches.is_present("ticker-interval"),
+                matches.value_of("pattern"),
+                match matches.value_of("start-bar") {
+                    Some(start_bar) => {
+                        let has_pattern_tag = matches.is_present("pattern");
+                        if !has_pattern_tag {
+                            println!(
+                                "{} --start-bar : {}",
+                                strings::STRING_WARNING_PATTERN_TAG_NEEDED,
+                                strings::STRING_HELP_START_BAR
+                            );
+                        }
+
+                        start_bar.parse().unwrap_or(1)
+                    }
+                    None => 1,
+                },
             ),
             None => println!(
                 "{} {}",

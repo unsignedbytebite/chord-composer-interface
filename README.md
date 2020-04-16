@@ -33,13 +33,13 @@ The philosophy behind **Chord Composer** is to make a lightweight, portable, and
 
 ## Command line arguments
 
-> `./chord_composer --help`
-
 ```shell
+Chord Composer 0.1.2
+Cj <unsignedbytebite@gmail.com>
 A music composition tool for structuring chord progressions and patterns.
 
 USAGE:
-    chord_composer.exe [SUBCOMMAND]
+    chord-composer-interface [SUBCOMMAND]
 
 FLAGS:
     -h, --help       Prints help information
@@ -51,23 +51,39 @@ SUBCOMMANDS:
     help        Prints this message or the help of the given subcommand(s)
     play        Playback patterns in a composition.
     template    Export a composition arrangement YAML template
-```
-
-> `./chord_composer play --help`
 
 ```
+
+```shell
 Playback patterns in a composition.
 
 USAGE:
-    chord_composer.exe play [FLAGS] <COMPOSITION_FILE>
+    chord-composer-interface play [FLAGS] [OPTIONS] <COMPOSITION_FILE>
 
 FLAGS:
-    -h, --help         Prints help information
-        --metronome    Play a metronome during playback.
+    -h, --help               Prints help information
+        --metronome          Play a metronome during playback.
         --ticker-bar         Prints the current time on each bar change.
         --ticker-beat        Prints the current time on each beat change.
         --ticker-interval    Prints the current time on each beat interval change.
-    -V, --version      Prints version information
+    -V, --version            Prints version information
+
+OPTIONS:
+        --pattern <pattern>        Play a pattern
+        --start-bar <start-bar>    The bar to start playback from
+
+ARGS:
+    <COMPOSITION_FILE>    The YAML composition arrangement file.
+```
+```shell
+Export composition patterns to .MID.
+
+USAGE:
+    chord-composer-interface export <COMPOSITION_FILE>
+
+FLAGS:
+    -h, --help       Prints help information
+    -V, --version    Prints version information
 
 ARGS:
     <COMPOSITION_FILE>    The YAML composition arrangement file.
