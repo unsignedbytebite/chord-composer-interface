@@ -1,0 +1,102 @@
+Failed to deserialize file! Does it exist or have composition parameters?
+(Falha ao desserializar ficheiro! Existe ou tem parâmetros de composição?)
+文档反序列化失效了！是否是否存在或有音乐创作参数吗？
+
+Patterns are empty!
+(Padrões vazios!)
+
+No patterns found!
+(Nenhum padrão encontrado!)
+
+Failed to export MIDI files!
+(Falha ao exportar ficheiros MIDI!)
+
+Time cannot reverse!
+(O tempo não pode reverter!)
+
+Bad time signature! Denominator must be at least 1. Only numerators 2, 4, 8, 6, 16, 32 are currently supported!
+(Péssimo horário de assinatura! O denominador deve ser pelo menos 1. Apenas numeradores 2, 4, 8, 6, 16, 32 são suportados atualmente!)
+
+The event cannot be reached!
+(O evento não pode ser alcançado!)
+
+One of the instruments cannot be loaded or created for playback. Do they exist?
+(Um dos instrumentos não pode ser carregado ou criado para playback. Será que existem?)
+
+Failed to export template!
+(Falha ao exportar modelo!)
+
+Cannot be found!
+(Não foi encontrado!)
+
+Additional commands required!
+(Comandos adicionais necessários!)
+
+Exporting...
+(Exportando...)
+
+Exported.
+(Exportado.)
+
+Export complete.
+(Exportação completa.)
+
+Playback complete.
+(Playback completo.)
+
+Exported template.
+(Modelo exportado.)
+
+Chord Composer.
+(Compositor de acordes.)
+
+A music composition tool for structuring chord progressions and patterns.
+(Uma ferramenta de composição musical para estreturar progressos e padrões de acordes.)
+
+Playback patterns in a composition.
+(Padrões de playback numa composição.)
+
+The composition arrangement YAML file.
+(A disposição de composição do ficheiro YAML.)
+
+Play a metronome during playback.
+(Reproduz um metrônomo durante o playback)
+
+Export composition patterns to .MID.
+(Exportar padrões de composição para .MID.)
+
+Export a composition arrangement YAML template.
+(Exportar uma disposição de composião em modelo YAML.)
+
+Export path of the YAML template.
+(Exportar trajeto do modelo YAML.)
+
+Print the list of supported chords and their intervals.
+(Imprime a lista de acordes suportados e respetivos intervalos.)
+
+Prints the current time on each bar change.
+(Imprime a hora atual em cada alteração de barra.)
+
+Prints the current time on each beat change.
+(Imprime a hora atual em cada alteração de batida.)
+
+Prints the current time on each beat interval change.
+(Imprime a hora atual em cada alteração de intervalo da batida.)
+
+For more, use-help.
+(Para mais, utilize-ajuda.)
+
+Play a pattern.
+(Reproduzir um padrão.)
+
+The bar to start playback from.
+(A barra para retomar playback.)
+
+Warning, the --pattern option is required for this tag to work.
+(Aviso, a opção de padrão é obrigatória para esta tag funcionar.)
+
+Time cannot reverse!
+(O tempo não pode reverter!)
+
+Bad time signature! Denominator must be at least 1. Only numerators 2, 4, 8, 6, 16, 32 are currently supported!
+(Péssimo tempo de assinatura! O denominador deve ser pelo menos 1. Apenas numeradores 2, 4, 8, 6, 16, 32 são suportados atualmente!)
