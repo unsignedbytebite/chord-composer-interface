@@ -1,128 +1,121 @@
+#[cfg(any(feature = "eng", all(not(feature = "zhn"), not(feature = "pt"))))]
+pub mod strings {
+    pub const ERROR_DESERIALIZE_FILE: &str =
+        "Failed to deserialize file! Does it exist or have composition parameters?";
+    pub const ERROR_EMPTY_PATTERNS: &str = "Patterns are empty!";
+    pub const ERROR_NO_FOUND_PATTERNS: &str = "No patterns found!";
+    pub const ERROR_MIDI_EXPORT: &str = "Failed to export MIDI files!";
+    pub const ERROR_TIME_REVERSED: &str = "Time cannot reverse!";
+    pub const ERROR_BAD_TIME_SIGNATURE:&str = "Bad time signature! Denominator must be at least 1. Only numerators 2, 4, 8, 6,16, 32 are currently supported!";
+    pub const ERROR_UNREACHABLE_EVENT: &str = "The event cannot be reached!";
+    pub const ERROR_LOAD_INSTRUMENTS: &str =
+        "One of the instruments cannot be loaded or created for playback. Do they exist?";
+    pub const ERROR_EXPORT_TEMPLATE: &str = "Failed to export template!";
+    pub const ERROR_NOT_FOUND: &str = "Cannot be found!";
+    pub const ERROR_NEEDS_MORE_COMMANDS: &str = "Additional commands required!";
+    pub const NOTE_EXPORTING: &str = "Exporting...";
+    pub const NOTE_EXPORTED: &str = "Exported.";
+    pub const NOTE_EXPORT_SUCCESS: &str = "Export complete.";
+    pub const NOTE_PLAYBACK_COMPLETE: &str = "Playback complete.";
+    pub const NOTE_TEMPLATE_EXPORTED: &str = "Exported template.";
+    pub const TITLE: &str = "Chord Composer";
+    pub const ABOUT: &str =
+        "A music composition tool for structuring chord progressions and patterns.";
+    pub const ABOUT_PLAYBACK: &str = "Playback patterns in a composition.";
+    pub const ABOUT_COMPOSITION_FILE: &str = "The composition arrangement YAML file.";
+    pub const ABOUT_METRONOME: &str = "Play a metronome during playback.";
+    pub const ABOUT_MIDI_EXPORT: &str = "Export composition patterns to .MID.";
+    pub const ABOUT_TEMPLATE_EXPORT: &str = "Export a composition arrangement YAML template.";
+    pub const ABOUT_TEMPLATE_PATH: &str = "Export path of the YAML template.";
+    pub const ABOUT_CHORDS: &str = "Print the list of supported chords and their intervals.";
+    pub const ABOUT_PRINT_BAR: &str = "Prints the current time on each bar change.";
+    pub const ABOUT_PRINT_BEAT: &str = "Prints the current time on each beat change.";
+    pub const ABOUT_PRINT_BEAT_INTERVAL: &str =
+        "Prints the current time on each beat interval change.";
+    pub const ABOUT_HELP: &str = "For more, use-help.";
+    pub const ABOUT_PATTERN_PLAY: &str = "Play a pattern.";
+    pub const ABOUT_PLAYBACK_START: &str = "The bar to start playback from.";
+    pub const WARNING_PATTERN_OPTION: &str =
+        "Warning, the --pattern option is required for this tag to work.";
+}
+
 #[cfg(feature = "pt")]
 pub mod strings {
-    pub const STRING_FAIL_DESERIALIZE: &str = "⚡ A desserialização do arquivo falhou!";
-    pub const STRING_FAIL_EMPTY_PATTERNS: &str = "⚡ Os padrões estão vazios!";
-    pub const STRING_FAIL_NO_PATTERNS: &str = "⚡ Os padrões não foram encontrados!";
-    pub const STRING_FAIL_EXPORT_MIDI: &str = "⚡ A exportação de arquivos MIDI falhou!";
-    pub const STRING_EXPORTING: &str = "Exportando... ";
-    pub const STRING_EXPORTED: &str = "Exportado";
-    pub const STRING_EXPORTED_COMPLETE: &str = "Exportação completa!";
-    pub const STRING_PLAYBACK_COMPLETE: &str = "Reprodução completa!";
-    pub const STRING_TEMPLATE_EXPORT_COMPLETE: &str = "Padrão exportado!";
-    pub const STRING_TEMPLATE_EXPORT_FAIL: &str = "Exportação de Padrão falhou";
-    pub const STRING_TITLE: &str = "Chord Composer (Compositor de acorde)";
-    pub const STRING_ABOUT: &str = "Ferramenta de composição para arranjos de acordes";
-    pub const STRING_ABOUT_PLAY: &str = "Tocar um arranjo";
-    pub const STRING_HELP_COMPOSITION_FILE: &str = "O arquivo YAML do arranjo para tocar";
-    pub const STRING_HELP_METRONOME: &str = "Reprodução com Metrônomo";
-    pub const STRING_ABOUT_EXPORT: &str = "Exportar o padrão de composição para .mid";
-    pub const STRING_ABOUT_TEMPLATE_EXPORT: &str = "Exportar o modelo de composição";
-    pub const STRING_PATH_TEMPLATE_EXPORT: &str = "A pasta para exportar o padrão YAML";
-    pub const STRING_ABOUT_CHORDS: &str = "Mostrar lista de acordes apoiados e os seus intervalos";
-    pub const STRING_WARNING_ADDITIONAL: &str = "Comandos adicionais necessitados";
-    pub const STRING_WARNING_NOT_FOUND: &str = "Não foi encontrado.";
-    pub const STRING_HELP: &str = "Para mais ajuda, digite --help";
-    pub const STRING_TIME_REVERSE: &str = "⚡ O tempo não pode fluir ao contrário!";
-    pub const STRING_BAD_TIME_SIGNATURE: &str = "⚡ Assinatura de hora ruim! O denominador deve ter pelo menos 1. Numeradores 2, 4, 8, 6, 16, 32 são suportados apenas!";
-    pub const STRING_UNREACHABLE_EVENT: &str = "⚡ O evento não pode ser alcançado";
-    pub const STRING_FAIL_LOAD_SAMPLER: &str =
-        "⚡ Um dos instrumentos não pode ser carregado ou criado para reprodução. Eles existem?";
-    pub const STRING_HELP_TICKER_BAR: &str = "Imprime a hora atual em cada mudança de barra.";
-    pub const STRING_HELP_TICKER_BEAT: &str = "Imprime a hora atual em cada alteração de batida.";
-    pub const STRING_HELP_TICKER_INTERVAL: &str =
-        "Imprime a hora atual em cada alteração do intervalo de batida.";
-
-    pub const STRING_HELP_PLAY_PATTERN: &str = "Reproduzir um padrão.";
-    pub const STRING_HELP_START_BAR: &str = "A barra para iniciar a reprodução.";
-    pub const STRING_WARNING_PATTERN_TAG_NEEDED: &str =
-        "Aviso tag --pattern é necessária para que essa tag funcione.";
+    pub const ERROR_DESERIALIZE_FILE: &str =
+        "Falha ao desserializar ficheiro! Existe ou tem parâmetros de composição?";
+    pub const ERROR_EMPTY_PATTERNS: &str = "Padrões vazios!";
+    pub const ERROR_NO_FOUND_PATTERNS: &str = "Nenhum padrão encontrado!";
+    pub const ERROR_MIDI_EXPORT: &str = "Falha ao exportar ficheiros MIDI!";
+    pub const ERROR_TIME_REVERSED: &str = "O tempo não pode reverter!";
+    pub const ERROR_BAD_TIME_SIGNATURE:&str = "Péssimo horário de assinatura! O denominador deve ser pelo menos 1. Apenas numeradores 2, 4, 8, 6, 16, 32 são suportados atualmente!";
+    pub const ERROR_UNREACHABLE_EVENT: &str = "O evento não pode ser alcançado!";
+    pub const ERROR_LOAD_INSTRUMENTS: &str =
+        "Um dos instrumentos não pode ser carregado ou criado para playback. Será que existem?";
+    pub const ERROR_EXPORT_TEMPLATE: &str = "Falha ao exportar modelo!";
+    pub const ERROR_NOT_FOUND: &str = "Não foi encontrado!";
+    pub const ERROR_NEEDS_MORE_COMMANDS: &str = "Comandos adicionais necessários!";
+    pub const NOTE_EXPORTING: &str = "Exportando...";
+    pub const NOTE_EXPORTED: &str = "Exportado.";
+    pub const NOTE_EXPORT_SUCCESS: &str = "Exportação completa.";
+    pub const NOTE_PLAYBACK_COMPLETE: &str = "Playback completo.";
+    pub const NOTE_TEMPLATE_EXPORTED: &str = "Modelo exportado.";
+    pub const TITLE: &str = "Chord Composer (Compositor de acordes)";
+    pub const ABOUT: &str =
+        "Uma ferramenta de composição musical para estreturar progressos e padrões de acordes.";
+    pub const ABOUT_PLAYBACK: &str = "Padrões de playback numa composição.";
+    pub const ABOUT_COMPOSITION_FILE: &str = "A disposição de composição do ficheiro YAML.";
+    pub const ABOUT_METRONOME: &str = "Reproduz um metrônomo durante o playback";
+    pub const ABOUT_MIDI_EXPORT: &str = "Exportar padrões de composição para .MID.";
+    pub const ABOUT_TEMPLATE_EXPORT: &str =
+        "Exportar uma disposição de composião em modelo YAML.";
+    pub const ABOUT_TEMPLATE_PATH: &str = "Exportar trajeto do modelo YAML.";
+    pub const ABOUT_CHORDS: &str = "Imprime a lista de acordes suportados e respetivos intervalos.";
+    pub const ABOUT_PRINT_BAR: &str = "Imprime a hora atual em cada alteração de barra.";
+    pub const ABOUT_PRINT_BEAT: &str = "Imprime a hora atual em cada alteração de batida.";
+    pub const ABOUT_PRINT_BEAT_INTERVAL: &str =
+        "Imprime a hora atual em cada alteração de intervalo da batida.";
+    pub const ABOUT_HELP: &str = "Para mais, utilize-ajuda.";
+    pub const ABOUT_PATTERN_PLAY: &str = "Reproduzir um padrão.";
+    pub const ABOUT_PLAYBACK_START: &str = "A barra para retomar playback.";
+    pub const WARNING_PATTERN_OPTION: &str =
+        "Aviso, a opção de padrão é obrigatória para esta tag funcionar.";
 }
 
 #[cfg(feature = "zhn")]
 pub mod strings {
-    pub const STRING_FAIL_DESERIALIZE: &str = "⚡ 无法反序列化文件!";
-    pub const STRING_FAIL_EMPTY_PATTERNS: &str = "⚡ 音乐模式为空!";
-    pub const STRING_FAIL_NO_PATTERNS: &str = "⚡ 找不到音乐模式!";
-    pub const STRING_FAIL_EXPORT_MIDI: &str = "⚡ 无法导出Midi文件!";
-    pub const STRING_EXPORTING: &str = "出口... ";
-    pub const STRING_EXPORTED: &str = "出口的";
-    pub const STRING_EXPORTED_COMPLETE: &str = "出口完成!";
-    pub const STRING_PLAYBACK_COMPLETE: &str = "播放完成!";
-    pub const STRING_TEMPLATE_EXPORT_COMPLETE: &str = "出口模板!";
-    pub const STRING_TEMPLATE_EXPORT_FAIL: &str = "出口失败模板";
-    pub const STRING_TITLE: &str = "Chord Composer (和弦作曲家)";
-    pub const STRING_ABOUT: &str = "和弦安排的合成工具";
-    pub const STRING_ABOUT_PLAY: &str = "播放音乐";
-    pub const STRING_HELP_COMPOSITION_FILE: &str = "要播放的音乐的yaml文件";
-    pub const STRING_HELP_METRONOME: &str = "节拍器播放";
-    pub const STRING_ABOUT_EXPORT: &str = "将合成模式导出到.mid";
-    pub const STRING_ABOUT_TEMPLATE_EXPORT: &str = "导出合成模板";
-    pub const STRING_PATH_TEMPLATE_EXPORT: &str = "yaml模板的导出路径";
-    pub const STRING_ABOUT_CHORDS: &str = "打印支持的和弦列表及其间隔";
-    pub const STRING_WARNING_ADDITIONAL: &str = "需要其他命令.";
-    pub const STRING_WARNING_NOT_FOUND: &str = "找不到.";
-    pub const STRING_HELP: &str = "更多，使用 --help";
-    pub const STRING_TIME_REVERSE: &str = "⚡ 时间不能倒流!";
-    pub const STRING_BAD_TIME_SIGNATURE: &str =
-        "⚡ 时间签名不好！分母必须至少为1. 仅支持数字, 4, 8, 6, 16, 32";
-    pub const STRING_UNREACHABLE_EVENT: &str = "⚡ 无法达到事件";
-    pub const STRING_FAIL_LOAD_SAMPLER: &str =
-        "⚡ 无法加载或创建其中一种乐器进行播放。它们存在吗？";
-    pub const STRING_HELP_TICKER_BAR: &str = "在每个音乐栏更改上打印当前音乐时间.";
-    pub const STRING_HELP_TICKER_BEAT: &str = "在每次音乐节拍变化时打印当前音乐时间.";
-    pub const STRING_HELP_TICKER_INTERVAL: &str = "在每个音乐节拍间隔更改时打印当前音乐时间.";
-    pub const STRING_HELP_PLAY_PATTERN: &str = "播放模式.";
-    pub const STRING_HELP_START_BAR: &str = "从播放模式开始播放的栏.";
-    pub const STRING_WARNING_PATTERN_TAG_NEEDED: &str =
-        "警告，--pattern标记是该标记起作用所必需的";
-}
-
-//TODO: Is there a better approach for default features?
-#[cfg(any(feature = "eng", all(not(feature = "zhn"), not(feature = "pt"))))]
-pub mod strings {
-    // Errors/Warnings
-    pub const STRING_FAIL_DESERIALIZE: &str =
-        "⚡ Failed to deserialize file! Does it exist or have composition parameters?";
-    pub const STRING_FAIL_EMPTY_PATTERNS: &str = "⚡ Patterns are empty!";
-    pub const STRING_FAIL_NO_PATTERNS: &str = "⚡ No patterns found!";
-    pub const STRING_FAIL_EXPORT_MIDI: &str = "⚡ Failed to export midi files!";
-    pub const STRING_TIME_REVERSE: &str = "⚡ Time cannot reverse!";
-    pub const STRING_BAD_TIME_SIGNATURE: &str = "⚡ Bad time signature! Denominator must be at least 1.  Numerators 2, 4, 8, 6, 16, 32 are only supported!";
-    pub const STRING_UNREACHABLE_EVENT: &str = "⚡ The event cannot be reached";
-    pub const STRING_FAIL_LOAD_SAMPLER: &str =
-        "⚡ One of the instruments cannot be loaded or created for playback. Do they exist?";
-    pub const STRING_TEMPLATE_EXPORT_FAIL: &str = "⚡ Failed to export template!";
-    pub const STRING_WARNING_NOT_FOUND: &str = "⚡ Cannot be found.";
-    pub const STRING_WARNING_ADDITIONAL: &str = "⚡ Additional commands required.";
-
-    // Status
-    pub const STRING_EXPORTING: &str = "Exporting... ";
-    pub const STRING_EXPORTED: &str = "Exported";
-    pub const STRING_EXPORTED_COMPLETE: &str = "Export complete!";
-    pub const STRING_PLAYBACK_COMPLETE: &str = "Playback complete!";
-    pub const STRING_TEMPLATE_EXPORT_COMPLETE: &str = "Exported template!";
-
-    // About
-    pub const STRING_TITLE: &str = "Chord Composer";
-    pub const STRING_ABOUT: &str =
-        "A music composition tool for structuring chord progressions and patterns.";
-    pub const STRING_ABOUT_PLAY: &str = "Playback patterns in a composition.";
-    pub const STRING_HELP_COMPOSITION_FILE: &str = "The YAML composition arrangement file.";
-    pub const STRING_HELP_METRONOME: &str = "Play a metronome during playback.";
-    pub const STRING_ABOUT_EXPORT: &str = "Export composition patterns to .MID.";
-    pub const STRING_ABOUT_TEMPLATE_EXPORT: &str = "Export a composition arrangement YAML template";
-    pub const STRING_PATH_TEMPLATE_EXPORT: &str = "Export path of the YAML template";
-    pub const STRING_ABOUT_CHORDS: &str = "Print the list of supported chords and their intervals.";
-    pub const STRING_HELP_TICKER_BAR: &str = "Prints the current time on each bar change.";
-    pub const STRING_HELP_TICKER_BEAT: &str = "Prints the current time on each beat change.";
-    pub const STRING_HELP_TICKER_INTERVAL: &str =
-        "Prints the current time on each beat interval change.";
-    pub const STRING_HELP: &str = "For more, use --help";
-
-    pub const STRING_HELP_PLAY_PATTERN: &str = "Play a pattern";
-    pub const STRING_HELP_START_BAR: &str = "The bar to start playback from";
-    pub const STRING_WARNING_PATTERN_TAG_NEEDED: &str =
-        "Warning, the --pattern tag is required for this tag to work";
+    pub const ERROR_DESERIALIZE_FILE: &str = "反序列化文件失败！它是否存在或有组成参数？";
+    pub const ERROR_EMPTY_PATTERNS: &str = "图案是空的！";
+    pub const ERROR_NO_FOUND_PATTERNS: &str = "找不到图案！";
+    pub const ERROR_MIDI_EXPORT: &str = "导出MIDI文件失败！";
+    pub const ERROR_TIME_REVERSED: &str = "时间不能倒转！";
+    pub const ERROR_BAD_TIME_SIGNATURE: &str =
+        "时间签名错误！分母必须至少为1。目前只支持分子2、4、8、6、16、32！";
+    pub const ERROR_UNREACHABLE_EVENT: &str = "无法访问事件！";
+    pub const ERROR_LOAD_INSTRUMENTS: &str = "无法加载或创建其中一个乐器以供播放。它们存在吗？";
+    pub const ERROR_EXPORT_TEMPLATE: &str = "导出模板失败！";
+    pub const ERROR_NOT_FOUND: &str = "找不到！";
+    pub const ERROR_NEEDS_MORE_COMMANDS: &str = "需要其他命令！";
+    pub const NOTE_EXPORTING: &str = "正在导出。。。";
+    pub const NOTE_EXPORTED: &str = "出口。";
+    pub const NOTE_EXPORT_SUCCESS: &str = "导出完成。";
+    pub const NOTE_PLAYBACK_COMPLETE: &str = "播放完毕。";
+    pub const NOTE_TEMPLATE_EXPORTED: &str = "导出的模板。";
+    pub const TITLE: &str = "Chord Composer (和弦作曲家)";
+    pub const ABOUT: &str = "一种用于构造和弦进行和模式的音乐创作工具。";
+    pub const ABOUT_PLAYBACK: &str = "乐曲中的重放模式。";
+    pub const ABOUT_COMPOSITION_FILE: &str = "构图安排YAML文件。";
+    pub const ABOUT_METRONOME: &str = "播放时播放节拍器。";
+    pub const ABOUT_MIDI_EXPORT: &str = "将合成模式导出到.MID。";
+    pub const ABOUT_TEMPLATE_EXPORT: &str = "导出构图排列YAML模板。";
+    pub const ABOUT_TEMPLATE_PATH: &str = "YAML模板的导出路径。";
+    pub const ABOUT_CHORDS: &str = "打印支持的和弦及其间隔的列表。";
+    pub const ABOUT_PRINT_BAR: &str = "打印每个更改栏上的当前时间。";
+    pub const ABOUT_PRINT_BEAT: &str = "打印每个节拍变化的当前时间。";
+    pub const ABOUT_PRINT_BEAT_INTERVAL: &str = "打印每个拍间隔变化的当前时间。";
+    pub const ABOUT_HELP: &str = "更多信息，请使用帮助。";
+    pub const ABOUT_PATTERN_PLAY: &str = "演奏一个模式。";
+    pub const ABOUT_PLAYBACK_START: &str = "开始播放一栏。";
+    pub const WARNING_PATTERN_OPTION: &str = "警告，此标记需要--模式 选项才能工作。";
 }
 
 #[test]
@@ -131,14 +124,13 @@ fn test_language() {
         feature = "eng",
         all(not(feature = "zhn"), not(feature = "pt"))
     )) {
-        assert_eq!(strings::STRING_TITLE, "Chord Composer");
+        assert_eq!(strings::TITLE, "Chord Composer");
     } else if cfg!(feature = "pt") {
-        assert_eq!(
-            strings::STRING_TITLE,
-            "Chord Composer (Compositor de acorde)"
-        );
+        assert_eq!(strings::TITLE, "Chord Composer (Compositor de acordes)");
     } else if cfg!(feature = "zhn") {
-        assert_eq!(strings::STRING_TITLE, "Chord Composer (和弦作曲家)");
+        assert_eq!(strings::TITLE, "Chord Composer (和弦作曲家)");
+    } else if cfg!(feature = "pt") {
+        assert_eq!(strings::TITLE, "Chord ");
     } else {
         assert!(false, "No language supplied");
     }

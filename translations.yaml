@@ -1,0 +1,161 @@
+phrases:
+  -
+    const_string: ERROR_DESERIALIZE_FILE
+    eng: Failed to deserialize file! Does it exist or have composition parameters?
+    pt: Falha ao desserializar ficheiro! Existe ou tem parâmetros de composição?
+    zhn: 反序列化文件失败！它是否存在或有组成参数？
+  - 
+    const_string: ERROR_EMPTY_PATTERNS
+    eng: Patterns are empty!
+    pt: Padrões vazios!
+    zhn: 图案是空的！
+  - 
+    const_string: ERROR_NO_FOUND_PATTERNS
+    eng: No patterns found!
+    pt: Nenhum padrão encontrado!
+    zhn: 找不到图案！
+  - 
+    const_string: ERROR_MIDI_EXPORT
+    eng: Failed to export MIDI files!
+    pt: Falha ao exportar ficheiros MIDI!
+    zhn: 导出MIDI文件失败！
+  - 
+    const_string: ERROR_TIME_REVERSED
+    eng: Time cannot reverse!
+    pt: O tempo não pode reverter!
+    zhn: 时间不能倒转！
+  - 
+    const_string: ERROR_BAD_TIME_SIGNATURE
+    eng: Bad time signature! Denominator must be at least 1. Only numerators 2, 4, 8, 6,16, 32 are currently supported!
+    pt: Péssimo horário de assinatura! O denominador deve ser pelo menos 1. Apenas numeradores 2, 4, 8, 6, 16, 32 são suportados atualmente!
+    zhn: 时间签名错误！分母必须至少为1。目前只支持分子2、4、8、6、16、32！
+  - 
+    const_string: ERROR_UNREACHABLE_EVENT
+    eng: The event cannot be reached!
+    pt: O evento não pode ser alcançado!
+    zhn: 无法访问事件！
+  - 
+    const_string: ERROR_LOAD_INSTRUMENTS
+    eng: One of the instruments cannot be loaded or created for playback. Do they exist?
+    pt: Um dos instrumentos não pode ser carregado ou criado para playback. Será que existem?
+    zhn: 无法加载或创建其中一个乐器以供播放。它们存在吗？
+  - 
+    const_string: ERROR_EXPORT_TEMPLATE
+    eng: Failed to export template!
+    pt: Falha ao exportar modelo!
+    zhn: 导出模板失败！
+  - 
+    const_string: ERROR_NOT_FOUND
+    eng: Cannot be found!
+    pt: Não foi encontrado!
+    zhn: 找不到！
+  - 
+    const_string: ERROR_NEEDS_MORE_COMMANDS
+    eng: Additional commands required!
+    pt: Comandos adicionais necessários!
+    zhn: 需要其他命令！
+  - 
+    const_string: NOTE_EXPORTING
+    eng: Exporting...
+    pt: Exportando...
+    zhn: 正在导出。。。
+  - 
+    const_string: NOTE_EXPORTED
+    eng: Exported.
+    pt: Exportado.
+    zhn: 出口。
+  - 
+    const_string: NOTE_EXPORT_SUCCESS
+    eng: Export complete.
+    pt: Exportação completa.
+    zhn: 导出完成。
+  - 
+    const_string: NOTE_PLAYBACK_COMPLETE
+    eng: Playback complete.
+    pt: Playback completo.
+    zhn: 播放完毕。
+  - 
+    const_string: NOTE_TEMPLATE_EXPORTED
+    eng: Exported template.
+    pt: Modelo exportado.
+    zhn: 导出的模板。
+  - 
+    const_string: TITLE
+    eng: Chord Composer
+    pt: Chord Composer(Compositor de acordes)
+    zhn: Chord Composer(和弦作曲家)
+  - 
+    const_string: ABOUT
+    eng: A music composition tool for structuring chord progressions and patterns.
+    pt: Uma ferramenta de composição musical para estreturar progressos e padrões de acordes.
+    zhn: 一种用于构造和弦进行和模式的音乐创作工具。
+  - 
+    const_string: ABOUT_PLAYBACK
+    eng: Playback patterns in a composition.
+    pt: Padrões de playback numa composição.
+    zhn: 乐曲中的重放模式。
+  - 
+    const_string: ABOUT_COMPOSITION_FILE
+    eng: The composition arrangement YAML file.
+    pt: A disposição de composição do ficheiro YAML.
+    zhn: 构图安排YAML文件。
+  - 
+    const_string: ABOUT_METRONOME
+    eng: Play a metronome during playback.
+    pt: Reproduz um metrônomo durante o playback
+    zhn: 播放时播放节拍器。
+  - 
+    const_string: ABOUT_MIDI_EXPORT
+    eng: Export composition patterns to .MID.
+    pt: Exportar padrões de composição para .MID.
+    zhn: 将合成模式导出到.MID。
+  - 
+    const_string: ABOUT_TEMPLATE_EXPORT
+    eng: Export a composition arrangement YAML template.
+    pt: Exportar uma disposição de composião em modelo YAML.
+    zhn: 导出构图排列YAML模板。
+  - 
+    const_string: ABOUT_TEMPLATE_PATH
+    eng: Export path of the YAML template.
+    pt: Exportar trajeto do modelo YAML.
+    zhn: YAML模板的导出路径。
+  - 
+    const_string: ABOUT_CHORDS
+    eng: Print the list of supported chords and their intervals.
+    pt: Imprime a lista de acordes suportados e respetivos intervalos.
+    zhn: 打印支持的和弦及其间隔的列表。
+  - 
+    const_string: ABOUT_PRINT_BAR
+    eng: Prints the current time on each bar change.
+    pt: Imprime a hora atual em cada alteração de barra.
+    zhn: 打印每个更改栏上的当前时间。
+  - 
+    const_string: ABOUT_PRINT_BEAT
+    eng: Prints the current time on each beat change.
+    pt: Imprime a hora atual em cada alteração de batida.
+    zhn: 打印每个节拍变化的当前时间。
+  - 
+    const_string: ABOUT_PRINT_BEAT_INTERVAL
+    eng: Prints the current time on each beat interval change.
+    pt: Imprime a hora atual em cada alteração de intervalo da batida.
+    zhn: 打印每个拍间隔变化的当前时间。
+  - 
+    const_string: ABOUT_HELP
+    eng: For more, use-help.
+    pt: Para mais, utilize-ajuda.
+    zhn: 更多信息，请使用帮助。
+  - 
+    const_string: ABOUT_PATTERN_PLAY
+    eng: Play a pattern.
+    pt: Reproduzir um padrão.
+    zhn: 演奏一个模式。
+  - 
+    const_string: ABOUT_PLAYBACK_START
+    eng: The bar to start playback from.
+    pt: A barra para retomar playback.
+    zhn: 开始播放一栏。
+  - 
+    const_string: WARNING_PATTERN_OPTION
+    eng: Warning, the --pattern option is required for this tag to work.
+    pt: Aviso, a opção de padrão é obrigatória para esta tag funcionar.
+    zhn: 警告，此标记需要--模式 选项才能工作。

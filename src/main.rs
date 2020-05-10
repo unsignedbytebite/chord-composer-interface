@@ -20,24 +20,24 @@ fn parse_result(result: &Result<SuccessResult, FailResult>) {
     match result {
         Ok(SuccessResult::Export(exported_files)) => {
             for exported_file in exported_files {
-                println!("{}{}", strings::STRING_EXPORTED, exported_file);
+                println!("{}{}", strings::NOTE_EXPORTED, exported_file);
             }
-            println!("{}", strings::STRING_EXPORTED_COMPLETE)
+            println!("{}", strings::NOTE_EXPORT_SUCCESS)
         }
-        Ok(SuccessResult::Playback) => println!("{}", strings::STRING_PLAYBACK_COMPLETE),
+        Ok(SuccessResult::Playback) => println!("{}", strings::NOTE_PLAYBACK_COMPLETE),
         Ok(SuccessResult::ExportTemplate) => {
-            println!("{}", strings::STRING_TEMPLATE_EXPORT_COMPLETE)
+            println!("{}", strings::NOTE_TEMPLATE_EXPORTED)
         }
-        Err(FailResult::Deserialize) => println!("{}", strings::STRING_FAIL_DESERIALIZE),
-        Err(FailResult::EmptyPatterns) => println!("{}", strings::STRING_FAIL_EMPTY_PATTERNS),
-        Err(FailResult::NoPatterns) => println!("{}", strings::STRING_FAIL_NO_PATTERNS),
-        Err(FailResult::ExportMIDI) => println!("{}", strings::STRING_FAIL_EXPORT_MIDI),
-        Err(FailResult::ExportTemplate) => println!("{}", strings::STRING_TEMPLATE_EXPORT_FAIL),
-        Err(FailResult::LoadSampler) => println!("{}", strings::STRING_FAIL_LOAD_SAMPLER),
+        Err(FailResult::Deserialize) => println!("{}", strings::ERROR_DESERIALIZE_FILE),
+        Err(FailResult::EmptyPatterns) => println!("{}", strings::ERROR_EMPTY_PATTERNS),
+        Err(FailResult::NoPatterns) => println!("{}", strings::ERROR_NO_FOUND_PATTERNS),
+        Err(FailResult::ExportMIDI) => println!("{}", strings::ERROR_MIDI_EXPORT),
+        Err(FailResult::ExportTemplate) => println!("{}", strings::ERROR_EXPORT_TEMPLATE),
+        Err(FailResult::LoadSampler) => println!("{}", strings::ERROR_LOAD_INSTRUMENTS),
         Err(FailResult::TimeReverse(music_time, index, chord)) => {
             println!(
                 "{} - [{}] {} @ {}.{}.{}",
-                strings::STRING_TIME_REVERSE,
+                strings::ERROR_TIME_REVERSED,
                 index,
                 chord,
                 music_time.get_bar(),
@@ -47,17 +47,17 @@ fn parse_result(result: &Result<SuccessResult, FailResult>) {
         }
         Err(FailResult::TimeSignature(time_signature)) => println!(
             "{} - {}/{}",
-            strings::STRING_BAD_TIME_SIGNATURE,
+            strings::ERROR_BAD_TIME_SIGNATURE,
             time_signature.get_numerator(),
             time_signature.get_denominator(),
         ),
         Err(FailResult::NoFoundPattern(file)) => {
-            println!("{} - {}", strings::STRING_FAIL_NO_PATTERNS, file)
+            println!("{} - {}", strings::ERROR_NO_FOUND_PATTERNS, file)
         }
         Err(FailResult::UnreachableTime(music_time, index, chord)) => {
             println!(
                 "{} - [{}] {} @ {}.{}.{}",
-                strings::STRING_UNREACHABLE_EVENT,
+                strings::ERROR_UNREACHABLE_EVENT,
                 index,
                 chord,
                 music_time.get_bar(),
@@ -73,7 +73,7 @@ fn parse_result(result: &Result<SuccessResult, FailResult>) {
 /// # Arguments
 /// * `file_path` - The path of the composition parameter yaml file to export.
 fn export(file_path: &str) {
-    println!("{}{}", strings::STRING_EXPORTING, file_path);
+    println!("{}{}", strings::NOTE_EXPORTING, file_path);
     parse_result(&chord_composer::export_file_to_midi(file_path));
 }
 
@@ -268,74 +268,74 @@ fn export_template(file_path: &str) {
 }
 
 fn main() {
-    let matches = App::new(strings::STRING_TITLE)
-        .version("0.1.2")
+    let matches = App::new(strings::TITLE)
+        .version("0.1.3")
         .author("Cj <unsignedbytebite@gmail.com>")
-        .about(strings::STRING_ABOUT)
+        .about(strings::ABOUT)
         .subcommand(
             SubCommand::with_name("play")
-                .about(strings::STRING_ABOUT_PLAY)
+                .about(strings::ABOUT_PATTERN_PLAY)
                 .arg(
                     Arg::with_name("COMPOSITION_FILE")
-                        .help(strings::STRING_HELP_COMPOSITION_FILE)
+                        .help(strings::ABOUT_COMPOSITION_FILE)
                         .required(true),
                 )
                 .arg(
                     Arg::with_name("metronome")
                         .long("metronome")
-                        .help(strings::STRING_HELP_METRONOME)
+                        .help(strings::ABOUT_METRONOME)
                         .takes_value(false),
                 )
                 .arg(
                     Arg::with_name("ticker-bar")
                         .long("ticker-bar")
-                        .help(strings::STRING_HELP_TICKER_BAR)
+                        .help(strings::ABOUT_PRINT_BAR)
                         .takes_value(false),
                 )
                 .arg(
                     Arg::with_name("ticker-beat")
                         .long("ticker-beat")
-                        .help(strings::STRING_HELP_TICKER_BEAT)
+                        .help(strings::ABOUT_PRINT_BEAT)
                         .takes_value(false),
                 )
                 .arg(
                     Arg::with_name("ticker-interval")
                         .long("ticker-interval")
-                        .help(strings::STRING_HELP_TICKER_INTERVAL)
+                        .help(strings::ABOUT_PRINT_BEAT_INTERVAL)
                         .takes_value(false),
                 )
                 .arg(
                     Arg::with_name("pattern")
                         .long("pattern")
-                        .help(strings::STRING_HELP_PLAY_PATTERN)
+                        .help(strings::ABOUT_PLAYBACK)
                         .takes_value(true),
                 )
                 .arg(
                     Arg::with_name("start-bar")
                         .long("start-bar")
-                        .help(strings::STRING_HELP_START_BAR)
+                        .help(strings::ABOUT_PLAYBACK_START)
                         .takes_value(true),
                 ),
         )
         .subcommand(
             SubCommand::with_name("template")
-                .about(strings::STRING_ABOUT_TEMPLATE_EXPORT)
+                .about(strings::ABOUT_TEMPLATE_EXPORT)
                 .arg(
                     Arg::with_name("EXPORT_PATH")
-                        .help(strings::STRING_PATH_TEMPLATE_EXPORT)
+                        .help(strings::ABOUT_TEMPLATE_PATH)
                         .required(true),
                 ),
         )
         .subcommand(
             SubCommand::with_name("export")
-                .about(strings::STRING_ABOUT_EXPORT)
+                .about(strings::ABOUT_MIDI_EXPORT)
                 .arg(
                     Arg::with_name("COMPOSITION_FILE")
-                        .help(strings::STRING_HELP_COMPOSITION_FILE)
+                        .help(strings::ABOUT_COMPOSITION_FILE)
                         .required(true),
                 ),
         )
-        .subcommand(SubCommand::with_name("chords").about(strings::STRING_ABOUT_CHORDS))
+        .subcommand(SubCommand::with_name("chords").about(strings::ABOUT_CHORDS))
         .get_matches();
 
     if let Some(matches) = matches.subcommand_matches("play") {
@@ -353,8 +353,8 @@ fn main() {
                         if !has_pattern_tag {
                             println!(
                                 "{} --start-bar : {}",
-                                strings::STRING_WARNING_PATTERN_TAG_NEEDED,
-                                strings::STRING_HELP_START_BAR
+                                strings::WARNING_PATTERN_OPTION,
+                                strings::ABOUT_PLAYBACK_START
                             );
                         }
 
@@ -365,8 +365,8 @@ fn main() {
             ),
             None => println!(
                 "{} {}",
-                strings::STRING_WARNING_ADDITIONAL,
-                strings::STRING_HELP
+                strings::ERROR_NEEDS_MORE_COMMANDS,
+                strings::ABOUT_HELP
             ),
         }
     } else if let Some(matches) = matches.subcommand_matches("export") {
@@ -374,8 +374,8 @@ fn main() {
             Some(file_name) => export(file_name),
             None => println!(
                 "COMPOSITION_FILE {} {}",
-                strings::STRING_WARNING_NOT_FOUND,
-                strings::STRING_HELP
+                strings::ERROR_NOT_FOUND,
+                strings::ABOUT_HELP
             ),
         }
     } else if let Some(_matches) = matches.subcommand_matches("chords") {
@@ -385,11 +385,11 @@ fn main() {
             Some(file_name) => export_template(file_name),
             None => println!(
                 "EXPORT_PATH {} {}",
-                strings::STRING_WARNING_NOT_FOUND,
-                strings::STRING_HELP
+                strings::ERROR_NOT_FOUND,
+                strings::ABOUT_HELP
             ),
         }
     } else {
-        println!("{}", strings::STRING_HELP)
+        println!("{}", strings::ABOUT_HELP)
     }
 }

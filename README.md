@@ -17,19 +17,13 @@ The philosophy behind **Chord Composer** is to make a lightweight, portable, and
 - Cross-platform.
 - Languages:
   - English
-  - Português
-  - 简体中文
+  - Português (Translation by Marco)
+  - 简体中文 (Translation by Ariel)
 
 ## Future Work
 
 - Build a terminal user interface.
 - Support more languages (including pirate).
-
-## Latest Binaries
-
-- Linux: _TODO_
-- Mac: _TODO_
-- Window: _TODO_
 
 ## Command line arguments
 

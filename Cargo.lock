@@ -116,7 +116,7 @@ dependencies = [
 
 [[package]]
 name = "chord-composer-interface"
-version = "0.1.2"
+version = "0.1.3"
 dependencies = [
  "chord-composer 0.3.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "clap 2.33.0 (registry+https://github.com/rust-lang/crates.io-index)",
